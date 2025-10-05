@@ -1,4 +1,5 @@
 "use client";
+import FadingLine from "@/components/FadingLine";
 import { useEffect, useState } from "react";
 
 const Performance = () => {
@@ -61,161 +62,119 @@ const Performance = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-black overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 opacity-20">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-            linear-gradient(rgba(0,255,153,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,255,153,0.1) 1px, transparent 1px)
-          `,
-            backgroundSize: "50px 50px",
-          }}
-        ></div>
-      </div>
+    <section className="relative  py-24  overflow-hidden">
+      {/* soft vignette */} 
+      <FadingLine className="absolute inset-0"/>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.15),transparent_60%)]" />
 
-      <div className="relative z-10 container mx-auto px-6 py-20">
+      <div className="relative z-10 container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl lg:text-6xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 mb-4">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight">
             Performance That Scales
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-green-400 to-emerald-300 mx-auto rounded-full shadow-[0_0_20px_rgba(0,255,153,0.5)]"></div>
+          <p className="mt-3 text-slate-300/80">
+            Dark bento grid with blue gradients, using your existing content.
+          </p>
         </div>
 
-        {/* Main Stats Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {stats.map((stat, index) => (
+        {/* Bento Grid */}
+        <div className="grid max-w-7xl mx-auto grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Card A: Requests stat */}
+          <div className="lg:col-span-6 rounded-2xl p-6 bg-gradient-to-b from-indigo-700/20 to-indigo-900/10 ring-1 ring-white/10">
+            <h3 className="text-white text-xl font-semibold mb-4">
+              Throughput
+            </h3>
             <div
-              key={stat.id}
               className="group relative"
-              onMouseEnter={() => setHoveredCard(stat.id)}
+              onMouseEnter={() => setHoveredCard(1)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div
-                className={`relative bg-gradient-to-br ${
-                  stat.gradient
-                } p-0.5 rounded-xl transition-all duration-500 ${
-                  hoveredCard === stat.id ? "scale-105 shadow-2xl" : "shadow-lg"
+                className={`relative rounded-xl p-6 bg-black/50 ring-1 ring-white/10 transition-all ${
+                  hoveredCard === 1 ? "shadow-2xl" : ""
                 }`}
               >
-                <div className="bg-black rounded-xl p-8 h-full">
-                  {/* Light beam glow effect */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-500`}
-                  ></div>
-
-                  <div className="relative z-10">
-                    {/* Number */}
-                    <div className="text-4xl lg:text-5xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 mb-2">
-                      {stat.number}
-                    </div>
-
-                    {/* Unit */}
-                    <div className="text-lg text-slate-400 font-mono mb-4">
-                      {stat.unit}
-                    </div>
-
-                    {/* Description */}
-                    <div className="text-slate-300 text-sm">
-                      {stat.description}
-                    </div>
-                  </div>
+                <div className="text-5xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">
+                  {stats[0].number}
+                </div>
+                <div className="text-slate-400 font-mono mt-2">
+                  {stats[0].unit}
+                </div>
+                <div className="text-slate-300 mt-3 text-sm">
+                  {stats[0].description}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Bottom Row - Graph and Code */}
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Animated Line Graph */}
-          <div className="bg-black/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
-            <h3 className="text-xl font-mono text-green-400 mb-6">
+          {/* Card B: AI workflows placeholder */}
+          <div className="lg:col-span-6 rounded-2xl p-6 bg-gradient-to-b from-indigo-700/20 to-indigo-900/10 ring-1 ring-white/10">
+            <h3 className="text-white text-xl font-semibold mb-4">
+              Smarter Workflows
+            </h3>
+            <div className="relative h-48 rounded-xl bg-black/50 ring-1 ring-white/10 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="h-28 w-28 rounded-full bg-blue-500/20 ring-1 ring-blue-400/30" />
+              </div>
+              <div className="absolute left-6 top-6 px-3 py-1 rounded-full bg-blue-500/10 text-blue-200 text-sm ring-1 ring-blue-400/30">
+                consult
+              </div>
+              <div className="absolute right-6 top-10 px-3 py-1 rounded-full bg-blue-500/10 text-blue-200 text-sm ring-1 ring-blue-400/30">
+                report
+              </div>
+              <div className="absolute left-10 bottom-8 px-3 py-1 rounded-full bg-blue-500/10 text-blue-200 text-sm ring-1 ring-blue-400/30">
+                invest
+              </div>
+            </div>
+          </div>
+
+          {/* Card C: Latency graph */}
+          <div className="lg:col-span-7 rounded-2xl p-6 bg-gradient-to-b from-indigo-700/20 to-indigo-900/10 ring-1 ring-white/10">
+            <h3 className="text-white text-xl font-semibold mb-6">
               Latency Stability
             </h3>
             <div className="relative h-64">
-              {/* Graph Background */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-800 to-transparent rounded-lg"></div>
-
-              {/* Animated Line */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent rounded-xl" />
               <svg
                 className="absolute inset-0 w-full h-full"
                 viewBox="0 0 400 200"
               >
                 <defs>
                   <linearGradient
-                    id="lineGradient"
+                    id="lineGradientBlue"
                     x1="0%"
                     y1="0%"
                     x2="100%"
                     y2="0%"
                   >
-                    <stop offset="0%" stopColor="#00FF99" stopOpacity="0.8" />
-                    <stop offset="50%" stopColor="#00FF99" stopOpacity="1" />
-                    <stop offset="100%" stopColor="#00FF99" stopOpacity="0.8" />
+                    <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.6" />
+                    <stop offset="50%" stopColor="#60a5fa" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.6" />
                   </linearGradient>
                 </defs>
-
-                {/* Grid Lines */}
-                <g stroke="rgba(0,255,153,0.1)" strokeWidth="1">
+                <g stroke="rgba(96,165,250,0.15)" strokeWidth="1">
                   <line x1="0" y1="50" x2="400" y2="50" />
                   <line x1="0" y1="100" x2="400" y2="100" />
                   <line x1="0" y1="150" x2="400" y2="150" />
                 </g>
-
-                {/* Animated Line */}
                 <path
                   d="M0,100 Q100,80 200,90 T400,95"
-                  stroke="url(#lineGradient)"
+                  stroke="url(#lineGradientBlue)"
                   strokeWidth="3"
                   fill="none"
                   className="animate-pulse"
                 />
-
-                {/* Data Points */}
-                <circle
-                  cx="100"
-                  cy="80"
-                  r="3"
-                  fill="#00FF99"
-                  className="animate-ping"
-                />
-                <circle
-                  cx="200"
-                  cy="90"
-                  r="3"
-                  fill="#00FF99"
-                  className="animate-ping"
-                  style={{ animationDelay: "0.5s" }}
-                />
-                <circle
-                  cx="300"
-                  cy="88"
-                  r="3"
-                  fill="#00FF99"
-                  className="animate-ping"
-                  style={{ animationDelay: "1s" }}
-                />
               </svg>
-
-              {/* Labels */}
-              <div className="absolute bottom-0 left-0 text-xs text-slate-400 font-mono">
-                <div>0ms</div>
-                <div className="mt-16">0.5ms</div>
-                <div className="mt-16">1.0ms</div>
-              </div>
             </div>
           </div>
 
-          {/* Code Snippet Card */}
-          <div className="bg-black/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
-            <h3 className="text-xl font-mono text-green-400 mb-6">
+          {/* Card D: Code snippet */}
+          <div className="lg:col-span-5 rounded-2xl p-6 bg-gradient-to-b from-indigo-700/20 to-indigo-900/10 ring-1 ring-white/10">
+            <h3 className="text-white text-xl font-semibold mb-6">
               Efficient Handler
             </h3>
-            <div className="bg-black rounded-lg p-6 font-mono text-sm overflow-x-auto">
+            <div className="bg-black/60 rounded-lg p-6 font-mono text-sm overflow-x-auto ring-1 ring-white/10">
               <div className="text-gray-500 mb-2">
                 // High-performance async handler
               </div>
@@ -236,9 +195,7 @@ const Performance = () => {
                 <span className="text-white"> result;</span>
               </div>
               <div className="text-gray-300">&#125;</div>
-
-              {/* Glowing Cursor */}
-              <span className="text-green-400 animate-pulse">|</span>
+              <span className="text-blue-400 animate-pulse">|</span>
             </div>
           </div>
         </div>

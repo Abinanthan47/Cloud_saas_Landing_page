@@ -1,9 +1,11 @@
+import FeaturesSectionDemo from "@/components/ui/features-section-demo-2";
+
 const Faetures = () => {
   const features = [
     {
       icon: (
         <svg
-          className="w-8 h-8 text-green-700"
+          className="w-10 h-10 text-green-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -39,7 +41,7 @@ const Faetures = () => {
     {
       icon: (
         <svg
-          className="w-8 h-8 text-green-700"
+          className="w-10 h-10 text-green-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -80,7 +82,7 @@ const Faetures = () => {
     {
       icon: (
         <svg
-          className="w-8 h-8 text-green-700"
+          className="w-10 h-10 text-green-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -100,7 +102,7 @@ const Faetures = () => {
     {
       icon: (
         <svg
-          className="w-8 h-8 text-green-700"
+          className="w-10 h-10 text-green-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -140,55 +142,41 @@ const Faetures = () => {
   ];
 
   return (
-    <section className="py-20 bg-green-50">
-      <div className="container mx-auto px-6">
+    <section className="py-20 bg-black">
+      <div className="container max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Section - Introduction */}
           <div className="space-y-8">
             {/* Header */}
-            <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+            <div className="text-sm font-medium text-gray-500 uppercase tracking-wide">
               PLATFORM
             </div>
 
             {/* Main Title */}
-            <h2 className="text-4xl lg:text-5xl font-bold text-green-800 leading-tight">
-              Build on a powerful foundation
+            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+              AI-POWERED DEVELOPMENT
             </h2>
 
             {/* Description */}
-            <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-              From filesystem to runtime, every layer of DataVec's platform is
-              engineered to give you the tools to build robust, scalable data
-              applications.
+            <p className="text-sm text-gray-600 text-justify leading-relaxed max-w-lg">
+              Today’s AI startups promise no‑code app building—but they struggle
+              with platform code, because platforms manage resources in space
+              and time, which requires spatial reasoning—something AI still
+              handles poorly. As a result, AI‑generated apps default to
+              high-level platforms (e.g., serverless, managed runtimes), which
+              are easy for AI to target but deliver unhappy trade-offs: bloated
+              runtime overhead, poor performance, and skyrocketing costs at
+              scale.
             </p>
 
             {/* Learn More Button */}
-            <button className="bg-green-50 border-2 border-green-700 text-green-700 px-6 py-3 rounded-lg font-medium hover:bg-green-100 transition-colors duration-200">
-              Learn More
+            <button className="relative inline-flex items-center justify-center px-6 py-3 rounded-2xl font-medium text-white bg-blue-600 ring-1 ring-blue-400/40 shadow-[0_12px_28px_-12px_rgba(59,130,246,0.75)] hover:bg-blue-500 hover:shadow-[0_16px_40px_-12px_rgba(59,130,246,0.9)] transition-all duration-200">
+              Get Started Now
             </button>
           </div>
 
           {/* Right Section - Features Grid */}
-          <div className="grid grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="space-y-4">
-                {/* Icon */}
-                <div className="w-12 h-12 flex items-center justify-center">
-                  {feature.icon}
-                </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-bold text-green-800">
-                  {feature.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <FeaturesSectionDemo />
         </div>
       </div>
     </section>

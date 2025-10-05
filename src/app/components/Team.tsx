@@ -1,7 +1,7 @@
 "use client";
-
-import { ExternalLink, Github, Linkedin, Mail, Twitter } from "lucide-react";
-import { useState } from "react";
+import FadingLine from "@/components/FadingLine";
+import LightRays from "@/components/LightRays";
+import Image from "next/image";
 
 interface TeamMember {
   id: string;
@@ -9,203 +9,109 @@ interface TeamMember {
   role: string;
   bio: string;
   image: string;
-  social: {
-    linkedin?: string;
-    twitter?: string;
-    github?: string;
-    email?: string;
-    website?: string;
-  };
 }
 
 const teamData: TeamMember[] = [
   {
     id: "1",
-    name: "Sarah Chen",
-    role: "CEO & Co-Founder",
-    bio: "Former data scientist at Google with 10+ years of experience in machine learning and distributed systems. Passionate about making data accessible to everyone.",
-    image: "/api/placeholder/300/300",
-    social: {
-      linkedin: "https://linkedin.com/in/sarahchen",
-      twitter: "https://twitter.com/sarahchen",
-      email: "sarah@datavec.com",
-    },
+    name: "Ben Woolley",
+    role: "Platform Development",
+    bio: "A generalist with deep experience across all levels, from web front-ends to operating system internals. Decades of marketing technology experience.",
+    image: "/api/placeholder/160/160",
   },
   {
     id: "2",
-    name: "Marcus Rodriguez",
-    role: "CTO & Co-Founder",
-    bio: "Ex-AWS engineer specializing in cloud infrastructure and real-time data processing. Led the development of several open-source data tools.",
-    image: "/api/placeholder/300/300",
-    social: {
-      linkedin: "https://linkedin.com/in/marcusrodriguez",
-      github: "https://github.com/marcusrodriguez",
-      email: "marcus@datavec.com",
-    },
+    name: "Tony Davydets",
+    role: "Application Development",
+    bio: "A prolific application developer who can build novel products on any platform. Decades of government contracting experience.",
+    image: "/api/placeholder/160/160",
   },
   {
     id: "3",
-    name: "Dr. Emily Watson",
-    role: "Head of AI Research",
-    bio: "PhD in Computer Science from MIT. Expert in natural language processing and automated machine learning. Published 50+ research papers.",
-    image: "/api/placeholder/300/300",
-    social: {
-      linkedin: "https://linkedin.com/in/emilywatson",
-      twitter: "https://twitter.com/emilywatson",
-      email: "emily@datavec.com",
-    },
-  },
-  {
-    id: "4",
-    name: "David Kim",
-    role: "VP of Engineering",
-    bio: "Former Netflix engineer with expertise in scalable data architectures. Led teams building systems processing petabytes of data daily.",
-    image: "/api/placeholder/300/300",
-    social: {
-      linkedin: "https://linkedin.com/in/davidkim",
-      github: "https://github.com/davidkim",
-      email: "david@datavec.com",
-    },
-  },
-  {
-    id: "5",
-    name: "Lisa Thompson",
-    role: "Head of Product",
-    bio: "Product leader with 8+ years at Microsoft and Stripe. Focused on creating intuitive user experiences for complex data workflows.",
-    image: "/api/placeholder/300/300",
-    social: {
-      linkedin: "https://linkedin.com/in/lisathompson",
-      twitter: "https://twitter.com/lisathompson",
-      email: "lisa@datavec.com",
-    },
-  },
-  {
-    id: "6",
-    name: "Alex Johnson",
-    role: "Head of Security",
-    bio: "Cybersecurity expert with background in financial services. Certified in multiple security frameworks and compliance standards.",
-    image: "/api/placeholder/300/300",
-    social: {
-      linkedin: "https://linkedin.com/in/alexjohnson",
-      email: "alex@datavec.com",
-    },
+    name: "Shane Kutzer",
+    role: "Business Development",
+    bio: "The king of customer loyalty. Decades operating multiple businesses.",
+    image: "/api/placeholder/160/160",
   },
 ];
 
 export default function Team() {
-  const [hoveredMember, setHoveredMember] = useState<string | null>(null);
-
-  const getSocialIcon = (platform: string) => {
-    switch (platform) {
-      case "linkedin":
-        return <Linkedin className="w-4 h-4" />;
-      case "twitter":
-        return <Twitter className="w-4 h-4" />;
-      case "github":
-        return <Github className="w-4 h-4" />;
-      case "email":
-        return <Mail className="w-4 h-4" />;
-      case "website":
-        return <ExternalLink className="w-4 h-4" />;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/20 to-background">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gradient-to-b from-black via-slate-950 to-transparent">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Meet Our Team
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're a diverse group of engineers, researchers, and product experts
-            passionate about transforming how organizations work with data.
-          </p>
+          <h2 className="text-4xl font-bold text-white">Team</h2>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 max-w-7xl mx-auto gap-0 divide-x divide-y divide-white/10 rounded-2xl overflow-hidden ring-1 ring-white/10">
           {teamData.map((member) => (
-            <div
-              key={member.id}
-              className="group relative bg-card border rounded-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-              onMouseEnter={() => setHoveredMember(member.id)}
-              onMouseLeave={() => setHoveredMember(null)}
-            >
-              {/* Profile Image */}
-              <div className="relative mb-6">
-                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center overflow-hidden">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">
-                      {member.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </span>
+            <div key={member.id} className="relative">
+              <div className="bg-transparent p-8 h-full">
+                <div className="mb-6 flex items-center justify-center">
+                  <div className="h-20 w-20 rounded-full overflow-hidden ring-1 ring-white/15">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={80}
+                      height={80}
+                    />
                   </div>
                 </div>
-
-                {/* Hover Overlay */}
-                {hoveredMember === member.id && (
-                  <div className="absolute inset-0 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="text-primary font-semibold text-sm">
-                      View Profile
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Member Info */}
-              <div className="text-center mb-4">
-                <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-primary font-medium">{member.role}</p>
-              </div>
-
-              {/* Bio */}
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                {member.bio}
-              </p>
-
-              {/* Social Links */}
-              <div className="flex justify-center gap-3">
-                {Object.entries(member.social).map(([platform, url]) => (
-                  <a
-                    key={platform}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center group/link"
-                    title={`${
-                      platform.charAt(0).toUpperCase() + platform.slice(1)
-                    }`}
-                  >
-                    {getSocialIcon(platform)}
-                  </a>
-                ))}
+                <h3 className="text-lg font-bold text-center text-gray-200 mb-1 uppercase tracking-wide">
+                  {member.name}
+                </h3>
+                <p className="text-center text-blue-300 mb-4">{member.role}</p>
+                <p className="text-gray-400 text-justify leading-relaxed">
+                  {member.bio}
+                </p>
               </div>
             </div>
           ))}
         </div>
+      </div>
+      <div className="mt-16 max-w-7xl mx-auto">
+        <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 border-b-2 border-blue-800/30 px-6 py-16 md:py-24 md:px-16 ">
+          {/* Light rays background */}
+          <div className="absolute inset-0 z-10">
+            <LightRays
+              raysOrigin="top-center"
+              raysColor="#3b82f6"
+              raysSpeed={1.5}
+              lightSpread={1.8}
+              rayLength={1.4}
+              followMouse={true}
+              mouseInfluence={0.1}
+              noiseAmount={0.08}
+              distortion={0.05}
+              className="opacity-70"
+            />
+          </div>
 
-        {/* Join Us Section */}
-        <div className="text-center bg-card border rounded-lg p-8">
-          <h3 className="text-2xl font-bold mb-4">Join Our Mission</h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            We're always looking for talented individuals who share our vision
-            of making data processing accessible, efficient, and powerful for
-            everyone.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-              View Open Positions
-            </button>
-            <button className="border border-border px-6 py-3 rounded-lg hover:bg-secondary transition-colors">
-              Learn About Our Culture
-            </button>
+          {/* dotted texture */}
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.15),transparent_60%)]" />
+
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 ring-1 ring-blue-400/30 text-blue-200 text-sm mb-6">
+              <span className="h-2 w-2 rounded-full bg-blue-400" />
+              Become a Part of Us
+            </div>
+
+            <h3 className="text-4xl md:text-6xl font-semibold text-white tracking-tight">
+              Ready to Scale at C‑Speed?
+            </h3>
+            <p className="mt-6 text-blue-100/80 text-lg max-w-2xl mx-auto">
+              Let’s talk about how DataVec can cut your runtime costs and unlock
+              performance that feels impossible anywhere else.
+            </p>
+
+            <div className="mt-10 flex justify-center">
+              <button className="relative inline-flex items-center justify-center px-6 py-3 rounded-2xl font-medium text-white bg-blue-600 ring-1 ring-blue-400/40 shadow-[0_12px_28px_-12px_rgba(59,130,246,0.75)] hover:bg-blue-500 hover:shadow-[0_16px_40px_-12px_rgba(59,130,246,0.9)] transition-all duration-200">
+                Contact us
+              </button>
+            </div>
           </div>
         </div>
+        <FadingLine/>
       </div>
     </section>
   );

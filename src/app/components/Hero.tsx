@@ -1,11 +1,13 @@
 import React from 'react'
 import { NavBar } from './Navbar'
 import Image from 'next/image'
+import LightRays from '@/components/LightRays'
 
 const Hero = () => {
   return (
    <section className='bg-[#000] h-screen w-screen  overflow-x-hidden'>
 <NavBar/>
+
 <div className='max-w-7xl mx-auto'>
 <div className='flex flex-col items-center pt-16 justify-center'>
   <h1 className='text-5xl font-bold text-center text-white font-space-grotesk'>Run 
