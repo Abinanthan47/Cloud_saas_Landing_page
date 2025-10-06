@@ -32,7 +32,7 @@ export default function FeaturesSectionDemo() {
   ];
   return (
     <div className="relative z-10 py-10 max-w-7xl mx-auto dark">
-      <h3 className="text-lg uppercase text-neutral-200 mb-4 px-10">
+      <h3 className="text-sm text-center  uppercase text-neutral-400 mb-4 ">
         Key Features
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2">

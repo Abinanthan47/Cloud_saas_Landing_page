@@ -19,8 +19,9 @@ export default function Home() {
       <FadingLine thickness={1} blur={50} color="rgba(59,130,246,0.9)" fade="rgba(59,130,246,0)"/>
       <Faetures />
       <Performance />
+      <FadingLine thickness={1} blur={50} color="rgba(59,130,246,0.4)" fade="rgba(59,130,246,0)"/>
       <Roadmap />
-      <FadingLine thickness={1} blur={50} color="rgba(59,130,246,0.2)" fade="rgba(59,130,246,0)"/>
+      <FadingLine thickness={1} blur={50} color="rgba(59,130,246,0.4)" fade="rgba(59,130,246,0)"/>
       <Team />
       <Footer/>
     </div>

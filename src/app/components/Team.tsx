@@ -17,21 +17,21 @@ const teamData: TeamMember[] = [
     name: "Ben Woolley",
     role: "Platform Development",
     bio: "A generalist with deep experience across all levels, from web front-ends to operating system internals. Decades of marketing technology experience.",
-    image: "/api/placeholder/160/160",
+    image: "/team.jpg",
   },
   {
     id: "2",
     name: "Tony Davydets",
     role: "Application Development",
     bio: "A prolific application developer who can build novel products on any platform. Decades of government contracting experience.",
-    image: "/api/placeholder/160/160",
+    image: "/team2.jpg",
   },
   {
     id: "3",
     name: "Shane Kutzer",
     role: "Business Development",
     bio: "The king of customer loyalty. Decades operating multiple businesses.",
-    image: "/api/placeholder/160/160",
+    image: "/teaam3.jpg",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function Team() {
           <h2 className="text-4xl font-bold text-white">Team</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 max-w-7xl mx-auto gap-0 divide-x divide-y divide-white/10 rounded-2xl overflow-hidden ring-1 ring-white/10">
+        <div className="grid md:grid-cols-3 max-w-7xl mx-auto gap-0 divide-x divide-y divide-blue-500/20 rounded-2xl overflow-hidden ring-1 ring-blue-500/20">
           {teamData.map((member) => (
             <div key={member.id} className="relative">
               <div className="bg-transparent p-8 h-full">
@@ -70,7 +70,7 @@ export default function Team() {
         </div>
       </div>
       <div className="mt-16 max-w-7xl mx-auto">
-        <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 border-b-2 border-blue-800/30 px-6 py-16 md:py-24 md:px-16 ">
+        <div className="relative overflow-hidden rounded-3xl ring-1 ring-blue-500/20 border-b-2 border-blue-800/30 px-6 py-16 md:py-24 md:px-16 ">
           {/* Light rays background */}
           <div className="absolute inset-0 z-10">
             <LightRays
@@ -111,7 +111,7 @@ export default function Team() {
             </div>
           </div>
         </div>
-        <FadingLine/>
+        <FadingLine />
       </div>
     </section>
   );

@@ -24,7 +24,7 @@ const WhyDatavec = () => {
       <div className="container mx-auto px-6">
         {/* Intro - centered like sample */}
         <div className="max-w-5xl mx-auto text-center mb-20">
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white mb-8">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-8">
             Why DataVec?
           </h1>
           <p className="text-lg md:text-2xl leading-relaxed text-slate-200/90">
@@ -38,7 +38,13 @@ const WhyDatavec = () => {
           <p className="mt-6 text-slate-300/80">
             See our deck for a deeper summary.
           </p>
-          <FadingLine thickness={1} blur={50} color="rgba(59,130,246,0.9)" fade="rgba(59,130,246,0)" className="mt-12"/>
+          <FadingLine
+            thickness={1}
+            blur={50}
+            color="rgba(59,130,246,0.9)"
+            fade="rgba(59,130,246,0)"
+            className="mt-12"
+          />
         </div>
 
         <div className="text-center mb-12">
@@ -56,7 +62,7 @@ const WhyDatavec = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* DataVec card */}
-          <div className="relative rounded-2xl p-6 bg-gradient-to-b from-blue-700/30 to-blue-900/20 ring-1 ring-blue-500/30 shadow-[0_30px_80px_-30px_rgba(59,130,246,0.35)]">
+          <div className="relative rounded-2xl p-6 bg-gradient-to-b from-blue-800/30 to-blue-900/20 ring-1 ring-blue-500/30 shadow-[0_30px_80px_-30px_rgba(59,130,246,0.35)]">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-8 w-8 rounded-lg bg-blue-500/20 ring-1 flex items-center justify-center ring-blue-400/30">
                 <CloudLightningIcon className="text-blue-400" />

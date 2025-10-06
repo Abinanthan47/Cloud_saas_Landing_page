@@ -58,7 +58,7 @@ const Architecture = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 max-w-7xl mx-auto lg:grid-cols-4 gap-0 divide-x divide-y divide-white/10 rounded-2xl overflow-hidden ring-1 ring-white/10">
+        <div className="grid md:grid-cols-2 max-w-7xl mx-auto lg:grid-cols-4 gap-0 divide-x divide-y rounded-2xl divide-blue-500/20  overflow-hidden ring-1 ring-blue-500/20">
           {features.map((feature, index) => (
             <div key={index} className="relative">
               {/* Card */}
