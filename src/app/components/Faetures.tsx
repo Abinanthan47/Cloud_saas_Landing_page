@@ -144,7 +144,7 @@ const Faetures = () => {
   return (
     <section className="py-20 bg-black">
       <div className="container max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Section - Introduction */}
           <div className="space-y-8">
             {/* Header */}
@@ -153,12 +153,12 @@ const Faetures = () => {
             </div>
 
             {/* Main Title */}
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
               AI-POWERED DEVELOPMENT
             </h2>
 
             {/* Description */}
-            <p className="text-sm text-gray-600 text-justify leading-relaxed max-w-lg">
+            <p className="text-sm md:text-base text-gray-400 text-left md:text-justify leading-relaxed max-w-lg">
               Today’s AI startups promise no‑code app building—but they struggle
               with platform code, because platforms manage resources in space
               and time, which requires spatial reasoning—something AI still

@@ -1,14 +1,20 @@
+import FadingLine from "@/components/FadingLine";
 import LightRays from "@/components/LightRays";
 import { ArrowUpRight, FileCode2Icon } from "lucide-react";
 import Image from "next/image";
 import { NavBar } from "./Navbar";
-import FadingLine from "@/components/FadingLine";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen w-screen overflow-hidden bg-black">
       {/* subtle rays */}
-      <FadingLine thickness={2} blur={5} color="rgba(59,130,246,0.9)" fade="rgba(59,130,246,0)" className="absolute bottom-0 left-0 right-0" />
+      <FadingLine
+        thickness={2}
+        blur={5}
+        color="rgba(59,130,246,0.9)"
+        fade="rgba(59,130,246,0)"
+        className="absolute bottom-0 left-0 right-0"
+      />
       <div className="absolute inset-0 z-10">
         <LightRays
           raysOrigin="top-center"
@@ -25,21 +31,19 @@ const Hero = () => {
       </div>
 
       {/* blue bottom glow */}
-      <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[480px] w-[1200px] -translate-x-1/2 rounded-[999px] bg-[radial-gradient(closest-side,rgba(59,130,246,0.35),transparent_70%)] blur-2xl" >
-       
-      </div>
+      <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[480px] w-[1200px] -translate-x-1/2 rounded-[999px] bg-[radial-gradient(closest-side,rgba(59,130,246,0.35),transparent_70%)] blur-2xl"></div>
 
       <NavBar />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center pt-20 md:pt-24 justify-center text-center">
           {/* badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 ring-1 ring-blue-400/30 text-blue-200 text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 ring-1 ring-blue-400/30 text-blue-200 text-[8px] md:text-sm mb-6">
             104KB actors | 300,000 invocations/sec per core | Zero cold-starts
           </div>
 
           {/* headline */}
-          <h1 className="font-space-grotesk text-white font-semibold text-5xl md:text-7xl tracking-tight">
+          <h1 className="font-space-grotesk text-white font-semibold text-3xl md:text-7xl tracking-tight">
             Run{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-blue-600">
               AI-built
@@ -50,14 +54,14 @@ const Hero = () => {
           </h1>
 
           {/* subtext */}
-          <p className="text-slate-300/90 max-w-2xl mt-6">
+          <p className="text-slate-300/90 text-center max-w-2xl mt-6">
             DataVec gives AI a fast, local runtime to compile to. Your app logic
             stays high-level, runs like hand-written C, and costs a fraction to
             operate.
           </p>
 
           {/* ctas */}
-          <div className="flex flex-row gap-4 mt-8 justify-center items-center">
+          <div className="flex flex-row sm:flex-row gap-3 sm:gap-4 mt-8 justify-center items-center w-full sm:w-auto">
             <button className="relative  gap-2 inline-flex items-center justify-center px-5 py-3 rounded-2xl font-medium text-white bg-blue-600 ring-1 ring-blue-400/40 shadow-[0_12px_28px_-12px_rgba(59,130,246,0.85)] hover:bg-blue-500 transition-all">
               Deck <FileCode2Icon className="w-4 h-4" />
             </button>
@@ -67,13 +71,13 @@ const Hero = () => {
           </div>
 
           {/* hero image placeholder */}
-          <div className="mt-12">
+          <div className="mt-12 w-full flex justify-center">
             <Image
               src="/herobg2.jpeg"
               alt="hero"
               width={500}
               height={520}
-              className="opacity-100"
+              className="opacity-100 w-full h-auto max-w-md sm:max-w-lg"
             />
             {/* <video src="/herobg.mp4" autoPlay loop muted className="rounded-3xl opacity-100" /> */}
           </div>

@@ -48,31 +48,31 @@ const Architecture = () => {
     <section className="py-20 bg-black">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white text-gray-900 mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Our Approach
           </h2>
-          <p className="text-lg  text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
             A C-based service stack (mnvkd) built from four frameworks.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 max-w-7xl mx-auto lg:grid-cols-4 gap-0 divide-x divide-y rounded-2xl divide-blue-500/20  overflow-hidden ring-1 ring-blue-500/20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-0 max-w-7xl mx-auto md:divide-x md:divide-y rounded-2xl divide-blue-500/20 overflow-hidden ring-1 ring-blue-500/20">
           {features.map((feature, index) => (
             <div key={index} className="relative">
               {/* Card */}
-              <div className="bg-transparent p-8 h-full">
+              <div className="bg-transparent p-6 md:p-8 h-full">
                 {/* Icon */}
                 <div className="mb-6 place-self-center">{feature.icon}</div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-center text-gray-200 mb-4 uppercase tracking-wide">
+                <h3 className="text-base md:text-lg font-bold text-center text-gray-200 mb-3 md:mb-4 uppercase tracking-wide">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-500 text-justify leading-relaxed">
+                <p className="text-gray-500 text-left md:text-justify leading-relaxed">
                   {feature.description}
                 </p>
               </div>

@@ -36,7 +36,7 @@ const items = [
         alt="performance"
         width={1000}
         height={500}
-        className="object-cover "
+        className="object-cover w-full h-auto"
       />
     ),
     className: "md:col-span-2",
@@ -52,7 +52,7 @@ const items = [
         alt="performance"
         width={500}
         height={500}
-        className="object-cover h-64"
+        className="object-cover w-full h-64"
       />
     ),
     className: "md:col-span-1",
@@ -68,7 +68,7 @@ const items = [
         alt="performance"
         width={1000}
         height={1000}
-        className="object-cover"
+        className="object-cover w-full h-auto"
       />
     ),
     className: "md:col-span-1",
@@ -84,7 +84,7 @@ const items = [
         alt="performance"
         width={1000}
         height={200}
-        className="object-contain h-52 "
+        className="object-contain w-full h-52"
       />
     ),
     className: "md:col-span-2",

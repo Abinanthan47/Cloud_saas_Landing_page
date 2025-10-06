@@ -10,17 +10,18 @@ export default function Roadmap() {
   ];
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-16 md:py-20 bg-black">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white">Roadmap</h2>
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Roadmap</h2>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
           {/* Horizontal gradient line behind steps */}
-         
-<FadingLine className="absolute left-0 right-0 top-10 h-[2px] bg-gradient-to-r from-blue-500/20 via-blue-500/60 to-blue-500/20"/>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+
+          <FadingLine className="absolute hidden md:block left-0 right-0 top-10 h-[2px]  bg-gradient-to-r from-blue-500/20 via-blue-500/60 to-blue-500/20" />
+          <FadingLine direction="vertical" className="absolute md:hidden left-0 right-0 top-10 h-[2px]  bg-gradient-to-r from-blue-500/20 via-blue-500/60 to-blue-500/20" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
             {steps.map((step, idx) => (
               <div
                 key={step.id}
@@ -38,18 +39,19 @@ export default function Roadmap() {
                 </div>
 
                 {/* Labels */}
-                <div className="mt-6">
-                  <div className="text-blue-300 text-sm font-medium">
+                <div className="mt-4 md:mt-6">
+                  <div className="text-blue-300 text-xs md:text-sm font-medium">
                     {step.label}
                   </div>
-                  <div className="text-white text-lg mt-1">{step.title}</div>
+                  <div className="text-white text-base md:text-lg mt-1">
+                    {step.title}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-     
     </section>
   );
 }
