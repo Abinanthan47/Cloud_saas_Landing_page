@@ -1,6 +1,3 @@
-import { cn } from "@/lib/utils";
-import React from "react";
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import {
   IconClipboardCopy,
   IconFileBroken,
@@ -8,6 +5,7 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 export function BentoGridSecondDemo() {
   return (
@@ -19,7 +17,6 @@ export function BentoGridSecondDemo() {
           description={item.description}
           header={item.header}
           className={item.className}
-         
         />
       ))}
     </BentoGrid>
@@ -31,22 +28,49 @@ const Skeleton = () => (
 const items = [
   {
     title: "Performance at Scale",
-    description: "300K+ HTTP requests/sec per core on a commodity i7,with consistent sub ms median latency, deterministic memory",
-    header: <Image src="/performance.png" alt="performance" width={1000} height={500} className="object-cover "/>,
+    description:
+      "300K+ HTTP requests/sec per core on a commodity i7,with consistent sub ms median latency, deterministic memory",
+    header: (
+      <Image
+        src="/performance.png"
+        alt="performance"
+        width={1000}
+        height={500}
+        className="object-cover "
+      />
+    ),
     className: "md:col-span-2",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Ontological Objects",
-    description: "Cache-aware design,   Locality of reference,Lambda calculus optimized",
-    header: <Image src="/fast2.png" alt="performance" width={500} height={500} className="object-cover h-64"/>,
+    description:
+      "Cache-aware design,   Locality of reference,Lambda calculus optimized",
+    header: (
+      <Image
+        src="/fast2.png"
+        alt="performance"
+        width={500}
+        height={500}
+        className="object-cover h-64"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Zero-overhead",
-    description: "3× faster than Go goroutines, optimized  cache sizes, high-level  I/O",
-    header: <Image src="/speed2.png" alt="performance" width={1000} height={1000} className="object-cover"/>,
+    description:
+      "3× faster than Go goroutines, optimized  cache sizes, high-level  I/O",
+    header: (
+      <Image
+        src="/speed2.png"
+        alt="performance"
+        width={1000}
+        height={1000}
+        className="object-cover"
+      />
+    ),
     className: "md:col-span-1",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
@@ -54,7 +78,15 @@ const items = [
     title: "Virtual Sockets",
     description:
       "High-performance I/O buffers, Zero copy, no syscalls overhead, Toolkit like SQLite for networking",
-    header: <Image src="/graph1.png" alt="performance" width={1000} height={200} className="object-contain h-52 "/>,
+    header: (
+      <Image
+        src="/graph1.png"
+        alt="performance"
+        width={1000}
+        height={200}
+        className="object-contain h-52 "
+      />
+    ),
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },

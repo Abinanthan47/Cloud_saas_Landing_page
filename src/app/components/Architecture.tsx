@@ -20,7 +20,7 @@ const Architecture = () => {
       ),
       title: "SERVICE FRAMEWORK",
       description:
-        "Super-Server protocol suite enables high-performance inter-service communication with built-in load balancing and fault tolerance.",
+        "Super-Server protocol  enables high-performance inter-service communication with built-in load balancing and fault tolerance.",
     },
     {
       icon: (

@@ -1,6 +1,5 @@
 import FadingLine from "@/components/FadingLine";
 import Architecture from "./components/Architecture";
-import Contact from "./components/Contact";
 import Faetures from "./components/Faetures";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
