@@ -80,7 +80,7 @@ const items = [
       "High-performance I/O buffers, Zero copy, no syscalls overhead, Toolkit like SQLite for networking",
     header: (
       <Image
-        src="/graph1.png"
+        src="/graph.png"
         alt="performance"
         width={1000}
         height={200}
